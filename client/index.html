@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="module" src="./JS/controller.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-content">
+            <img class="main-page-logo" src="./img/draw-n-guess-logoSVG.svg" alt="draw and guess logo">
+            <div class="main-page-selection">
+                <div class="selection-screens-container">
+                    <div class="main-page-selection-welcome main-page-selection-screen">
+                        <h1 class="main-page-text">Choose your nickname!</h1>
+                        <input type="text" placeholder="BESTPLAYER123" class="username-input main-page-input" maxlength="12">
+                        <button class="play-game-btn main-btn">
+                            <i class="play-game-icon main-btn-icon"></i>
+                            <strong class="main-btn-text">Play Game</strong>
+                        </button>
+                    </div>
+                    <div class="main-page-selection-enter main-page-selection-screen">
+                        <h1 class="main-page-text">Start playing ;)</h1>
+                        <button class="join-lobby-btn main-btn">
+                            <i class="join-lobby-icon main-btn-icon"></i>
+                            <strong class="main-btn-text">Enter lobby</strong>
+                        </button>
+                        <button class="create-room-btn main-btn">
+                            <i class="create-room-icon main-btn-icon"></i>
+                            <strong class="main-btn-text">Create Room</strong>
+                        </button>
+                    </div>
+                    <div class="room-credentials main-page-selection-screen">
+                        <h1 class="main-page-text">One last thing...</h1>
+                        <input type="text" placeholder="ROOM NAME" class="room-name-input main-page-input" maxlength="8">
+                        <input type="password" placeholder="PASSW (OPTIONAL)" class="room-password-input main-page-input" maxlength="8">
+                        <button class="create-room-done-btn main-btn">
+                            <i class="create-room-done-icon main-btn-icon"></i>
+                            <strong class="main-btn-text">LET'S PLAY!</strong>
+                        </button>
+                    </div>
+                </div>
+                <div class="play-game-spinner"></div>
+            </div>
+        </div>
+        <div class="lobby-content">
+            <div class="lobby-players-div">
+                    <div class="current-players-title-container">
+                        <h1 class="current-players-title">Players in lobby</h1>
+                    </div>
+                    <div class="curent-players-item-container">
+                        <!-- <div class="current-players-item">
+                            <div class="current-player-icon-container">
+                                <span class="current-player-icon"></span>
+                            </div>
+                            <div class="current-player-item-text">
+                                <div class="current-player-nickname">BESTPLAYER123</div>
+                                <div class="lobby-player-status lobby-player-active"></div>
+                            </div>
+                        </div>
+                        <div class="current-players-item">
+                            <div class="current-player-icon-container">
+                                <span class="current-player-icon"></span>
+                            </div>
+                            <div class="current-player-item-text">
+                                <div class="current-player-nickname">BESTPLAYER123</div>
+                                <div class="lobby-player-status lobby-player-inactive"></div>
+                            </div>
+                        </div> -->
+                    </div>
+            </div>
+            <div class="lobby-rooms-div">
+                <div class="lobby-rooms-header">
+                    <h1 class="lobby-rooms-header-text">There are 3 rooms available and 7 players</h1>
+                </div>
+                <div class="lobby-rooms-item-container">
+
+                    <!-- <div class="lobby-rooms-item lobby-rooms-item-locked">
+                        <div class="lobby-rooms-item-content">
+                            <div class="lobby-rooms-item-div">
+                                <div class="room-number">#001</div>
+                            </div>
+                            <div class="lobby-rooms-item-center lobby-rooms-item-div">
+                                <h2 class="lobby-rooms-item-text">ROOMNAME123</h2>
+                            </div>
+                            <div class="lobby-rooms-item-footer lobby-rooms-item-div">
+                                <div class="players-count">4/6<i class="fas fa-user"></i></div>
+                                <div class="lock-icon-container"><i class="fas fa-unlock-alt"></i></div>
+                            </div>
+                        </div>
+                        <div class="lobby-rooms-item-password">
+                            <h2>Enter password</h2>
+                            <input type="password" class="room-password main-page-input">
+                        </div>
+                    </div>
+                    <div class="lobby-rooms-item">
+                        <div class="lobby-rooms-item-div">
+                            <div class="room-number">#002</div>
+                        </div>
+                        <div class="lobby-rooms-item-center lobby-rooms-item-div">
+                            <h2 class="lobby-rooms-item-text">ROOMNAME123</h2>
+                        </div>
+                        <div class="lobby-rooms-item-footer lobby-rooms-item-div">
+                            <div class="players-count">1/6<i class="fas fa-user"></i></div>
+                            <div class="lock-icon-container"><i class="fas fa-unlock-alt"></i></div>
+                        </div>
+                    </div>
+                    <div class="lobby-rooms-item">
+                        <div class="lobby-rooms-item-div">
+                            <div class="room-number">#003</div>
+                        </div>
+                        <div class="lobby-rooms-item-center lobby-rooms-item-div">
+                            <h2 class="lobby-rooms-item-text">ROOMNAME123</h2>
+                        </div>
+                        <div class="lobby-rooms-item-footer lobby-rooms-item-div">
+                            <div class="players-count">2/6<i class="fas fa-user"></i></div>
+                            <div class="lock-icon-container"><i class="fas fa-lock"></i></div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="lobby-chat-div">
+                <div class="chat">
+                    <div class="chat-history">
+                        <!-- <div class="chat-message">Que tal todos?</div>
+                        <div class="chat-message">Que tal todos?2</div>
+                        <div class="chat-message">Que tal todos?3Que tal todos?3Que tal todos?3</div>
+                        <div class="chat-message">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam, velit.</div>
+                        <div class="chat-message">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam, velit.</div> -->
+                    </div>
+                    <input type="text" class="chat-input" placeholder="Type your message...">
+                </div>
+            </div>
+        </div>
+        <div class="game-content">
+            <!-- <div class="game-content-logo"></div> -->
+            <div class="main-content">
+                <div class="current-players">
+                    <div class="current-players-title-container">
+                        <h1 class="current-players-title">PLAYERS</h1>
+                    </div>
+                    <div class="current-players-item-container">
+                        <!-- <div class="current-players-item current-player-user">
+                            <div class="current-player-icon-container">
+                                <span class="current-player-icon"></span>
+                            </div>
+                            <div class="current-player-item-text">
+                                <div class="current-player-nickname">BESTPLAYER123</div>
+                                <div class="current-player-points">120pts</div>
+                            </div>
+                        </div>
+                        <div class="current-players-item">
+                            <div class="current-player-icon-container">
+                                <span class="current-player-icon"></span>
+                            </div>
+                            <div class="current-player-item-text">
+                                <div class="current-player-nickname">BESTPLAYER123</div>
+                                <div class="current-player-points">60pts</div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="canvas-container">
+                    <div class="canvas-header">
+                        <div class="about-to-start-header">
+                            <h1 class="about-to-start-text">Waiting for players<span class="points-container" style="position: absolute;">...</span></h1>
+                        </div>
+                        <div class="words-options-container">
+                            <h2 class="words-options-title">Choose a word to draw!</h2>
+                            <div class="words-options">
+                                <div class="words-options-item words-options-item-1">
+                                    <h3 class="words-options-item-text">random<span class="span-extra-points words-options-item-1-points">+60</span></h3>
+                                    <i class="words-options-item-iconready"></i>
+                                </div>
+                                <div class="words-options-item words-options-item-2">
+                                    <h3 class="words-options-item-text">impossible<span class="span-extra-points words-options-item-2-points">+25</span></h3>
+                                    <i class="words-options-item-iconready"></i>
+                                </div>
+                                <div class="words-options-item words-options-item-3">
+                                    <h3 class="words-options-item-text">sheesh<span class="span-extra-points words-options-item-3-points">+50</span></h3>
+                                    <i class="words-options-item-iconready"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="word-to-draw">
+                        </div>
+                    </div>
+                    <div class="canvas-wrapper">
+                        <canvas class="canvas" height="400" width="400"></canvas>
+                    </div>
+                </div>
+                <div class="toolbar-and-timer">
+                    <div class="timer">
+                        <!-- <div class="timer-icon-container"> -->
+                            <!-- <i class="timer-icon"></i> -->
+                        <!-- </div> -->
+                        <canvas height="15" width="15" class="timer-canvas"></canvas>
+                        <!-- <h1 class="timer-time">60</h1> -->
+                    </div>
+
+                    <!-- <div class="toolbar-pen toolbar-tool toolbar-tool-active"><i class="fas fa-pencil-alt"></i></div><div class="toobar-eraser toolbar-tool"><i class="fas fa-eraser"></i></div>
+                        <div class="toolbar-bucket toolbar-tool"><i class="fas fa-fill-drip"></i></div><div class="toolbar-line toolbar-tool"><i class="line-tool"></i></div>
+                        <div class="toolbar-circle toolbar-tool"><i class="far fa-circle"></i></div><div class="toolbar-square toolbar-tool"><i class="far fa-square"></i></div>
+                        <div class="toolbar-color toolbar-tool"><i class="fas fa-palette"></i></div> -->
+
+
+                    <div class="toolbar"></div>
+                </div>
+                <div class="room-chat-div">
+                    <div class="chat">
+                        <div class="chat-history">
+                            <!-- <div class="chat-message">Que tal todos?</div>
+                            <div class="chat-message">Que tal todos?2</div>
+                            <div class="chat-message">Que tal todos?3Que tal todos?3Que tal todos?3</div>
+                            <div class="chat-message">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam, velit.</div>
+                            <div class="chat-message">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam, velit.</div> -->
+                        </div>
+                        <input type="text" class="chat-input" placeholder="Type your message...">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="transition-div"></div>
+    <div class="background-div"></div>
+</body>
+</html>
