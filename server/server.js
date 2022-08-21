@@ -4,9 +4,7 @@ const fetch = require('node-fetch');
   
 const io = require('socket.io')(process.env.PORT || 3000, {
   cors: {
-    origin: true,
-    methods: ["GET", "POST"],
-    credentials: true
+    origin: '*'
   }
 });
 
