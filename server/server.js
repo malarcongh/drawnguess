@@ -2,11 +2,7 @@ const { users } = require('./gameState');
 const gameState = require('./gameState');
 const fetch = require('node-fetch');
   
-const io = require('socket.io')({
-  cors:{
-    origin: true
-  }
-});
+const io = require('socket.io')();
 
 let state = {
     activePlayer: '',
