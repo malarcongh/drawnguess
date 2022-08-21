@@ -2,11 +2,7 @@ const { users } = require('./gameState');
 const gameState = require('./gameState');
 const fetch = require('node-fetch');
   
-const io = require('socket.io')(process.env.PORT || 3000, {
-  cors: {
-    origin: '*'
-  }
-});
+const io = require('socket.io')();
 
 let state = {
     activePlayer: '',
@@ -400,3 +396,7 @@ const kickFromInactiveRoom = function(room){
 const getCountdown = function(room){
   return countdowns.find(countdown => countdown.room === room);
 }
+
+
+
+io.listen(process.env.PORT || 3000);
