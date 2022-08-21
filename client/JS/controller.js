@@ -16,7 +16,7 @@ const chatInput = document.querySelector('.chat-input');
 let socket;
 
 const playHandler = function(){
-    socket = io('http://localhost:3000');
+    socket = io('https://drawnguessgame.herokuapp.com/');
     initSocket(socket);
     WelcomeView.animationLoading('first');
     model.userData.userName = WelcomeView.getUserName();
