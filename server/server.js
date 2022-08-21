@@ -1,12 +1,14 @@
 const { users } = require('./gameState');
 const gameState = require('./gameState');
 const fetch = require('node-fetch');
+
+// , {
+//   cors:{
+//       origin: ['http://localhost:1234']
+//   }
+// }
   
-const io = require('socket.io')(process.env.PORT || 3000, {
-    cors:{
-        origin: ['http://localhost:1234']
-    }
-});
+const io = require('socket.io')(process.env.PORT || 3000);
 
 let state = {
     activePlayer: '',
