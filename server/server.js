@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
   
 const io = require('socket.io')({
   cors: {
-    origin: true
+    origin: 'https://drawnguessgame.netlify.app'
   }
 });
 
