@@ -19,6 +19,7 @@ export default class Drawer{
         this._activeTool = 'toolbar-pen';
         this._activeColor = '#000'  //black
 
+        this._currentLineWidth = 5;
         this._ctx.lineWidth = 5;
         this._ctx.lineCap = 'round';
         this._ctx.lineJoin = 'round';
